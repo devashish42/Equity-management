@@ -5,7 +5,7 @@ chai.use(chaiHttp);
 let server = require('../../app');
 //Our parent block
 describe('Net Orders', () => {
- describe('/GET net orders', () => {
+ describe('/GET Net orders', () => {
      console.log("sadasd");
      it('it should GET all the net orders', (done) => {
      chai.request(server)
@@ -15,7 +15,7 @@ describe('Net Orders', () => {
              (res).should.be.a('object');
              console.log(" ---------------end -----------");
              done();
-          });
+          }); 
        });
   });
 });

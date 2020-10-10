@@ -28,9 +28,12 @@ run: npm start (for starting the server)
 -----------------------------------------------------------------
 
 
+*******************FLOW*********************************
+List of Orders -> Order Grouping -> Order Aggregation
+********************************************************
 
 
-======================================================Structure of App=============================================
+======================================================Structure of App===========================================================
 The app contains 3 api as follows:
 
 *      http://localhost:5000/orders
@@ -80,7 +83,12 @@ The app contains 3 api as follows:
  This contains a GET method
  You will get all the aggregated orders as mentioned in Problem from calling this Api and you can see the Detailed output in console.
  See console for output with statements.
-=========================================================================================================================
+
+ *     http://localhost:5000/reset
+ This Api is GET method
+ calling this api will truncate the orders table and all the received orders till now will be deleted.
+
+=================================================================================================================================
 
 
 
