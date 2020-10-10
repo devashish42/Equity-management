@@ -125,8 +125,10 @@ I am trying to develop the Frontend part for my practice but its not fully devel
 Still you can go to crudfrontend folder and Do the following
 You can add a portfolio and add equity and commit them to save .
 After Adding you can click on Submit to send a post request and it will save the details in DB.
-You can click on Reset all previos orders to truncate the orders table and the place new ones.
+You can click on Reset all previous orders to truncate the orders table and the place new ones.
 
+Add a portfolio by writing P1,P2 in form and then click on Add a equity and then do the same for equity and click commit to save them.
+At last we can click on Submit to Post.
 
 
 Run these commands in order after opening crudfrontend folder
