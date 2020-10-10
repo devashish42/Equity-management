@@ -28,12 +28,17 @@ router.get("/", async (req, res) => {
         {
             if(json[o]%10)
             json[o]=10*(parseInt(json[o]/10));
-            console.log("Sell ",json[o]," units of ",o);
+
+            let sold=parseInt(json[o]);
+            console.log("Sell ",sold*-1," units of ",o);
         }
     }
     var response={};
     response["status"]=200;
     response["body"]=json;
+
+    //const resetObj=orders.resetOrders();
+    //response["resetDetails"]=resetObj;
     res.json(response);
   } catch (err) {
     res.send(" Error " + err);

@@ -23,7 +23,11 @@ router.get("/", async (req, res) => {
         console.log("Buy ",json[o]," units of ",o);
       }
       else
-        console.log("Sell ",json[o]*-1," units of ",o);
+      {
+        let sold=parseInt(json[o]);
+        console.log("Sell ",sold*-1," units of ",o);
+      }
+        
     }
     var o={};
     o["status"]=200;

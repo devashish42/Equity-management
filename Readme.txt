@@ -2,12 +2,10 @@ Instructions for setting up and running the server.
 
 =================================Frameworks & Libraries========================
 Express server.
-postgres DB.
+postgres DB (AWS).
 React Frontend(Under Development)
+Mocha, Chai for test.
 ================================================================================
-
-
-
 
 
 
@@ -73,20 +71,31 @@ The app contains 3 api as follows:
         The api can be called by using a browser for above url and You will get a response there and details on console.
 
 
-*      http://localhost:5000/net  (Grouped Orders)
- This contains a GET method
- You can call this Api and get the grouped orders and in console you can see the detailed details of grouped orders.
- See console for output with statements.
+*   http://localhost:5000/net  (Grouped Orders)
+        This contains a GET method
+        You can call this Api and get the grouped orders and in console you can see the detailed details of grouped orders.
+        See console for output with statements.
 
 
- *     http://localhost:5000/aggregate   (Aggregated Orders )
- This contains a GET method
- You will get all the aggregated orders as mentioned in Problem from calling this Api and you can see the Detailed output in console.
- See console for output with statements.
+ *  http://localhost:5000/aggregate   (Aggregated Orders )
+        This contains a GET method
+        You will get all the aggregated orders as mentioned in Problem from calling this Api and you can see the Detailed output in console.
+        See console for output with statements.
 
- *     http://localhost:5000/reset
- This Api is GET method
- calling this api will truncate the orders table and all the received orders till now will be deleted.
+ *  http://localhost:5000/reset
+        This Api is GET method
+        calling this api will truncate the orders table and all the received orders till now will be deleted.
+
+        We can reset after taking number of orders from different portfolios and generating the net and Aggregated orders.
+
+
+
+        For New Orders We can Hit the reset api to clean the Previous orders.
+        This will clean the Previous orders and the net and aggregated orders will be calculated again for new orders.
+
+        ************ I have commented the reset function in line 40,41 in aggregate.js inside routes folder. ***********************
+        ************ If we remove comment, then after each call to /aggregate api the Previous orders will be deleted. ************
+
 
 =================================================================================================================================
 
