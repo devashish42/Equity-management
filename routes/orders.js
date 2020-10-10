@@ -14,8 +14,9 @@ router.post("/", async (req, res) => {
 });
 router.get("/", async (req, res) => {
   try {
-    console.log("get orders");
+    console.log("---------------orders-------------");
     const ord = await orders.getOrders();
+    console.log(ord);
     res.json(ord);
   } catch (err) {
     res.send("Error " + err);

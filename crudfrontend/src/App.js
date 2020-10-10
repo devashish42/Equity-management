@@ -5,12 +5,12 @@ function App() {
   const[flag,setflag]=useState(0);
   const[count,setCount]=useState([]);
   const[portfolio,setPorfolio]=useState(0);
-  const[equity,setEquity]=useState({});
+  const[equity,setEquity]=useState([]);
  const handleAdd=()=>{
     setCount([...count ,1]);
 
   }
-  const handleSubmit=()=>{
+  const handleSubmit=(e)=>{
     console.log("Submit");
     console.log(equity);
 
@@ -36,7 +36,6 @@ function App() {
         )}
         
         <button onClick={handleAdd} style={{width:"200px"}} >Add an Equity</button>
-
         <button onClick={handleSubmit} style={{width:"200px"}} >Submit</button>
       </div>
     

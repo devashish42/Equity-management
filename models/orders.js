@@ -19,11 +19,23 @@ class orders {
     }
     return sol;
   }
-
   static async getOrders() {
     var sol = {};
     try {
       var resp = await pool.query(`SELECT * FROM public.orders`);
+      sol["status"] = 201;
+      sol["resp"] = resp.rows;
+    } catch (err) {
+      throw err;
+      sol["error"] = err;
+    }
+    return sol;
+  }
+
+  static async resetOrders() {
+    var sol = {};
+    try {
+      var resp = await pool.query(`TRUNCATE TABLE public.orders`);
       sol["status"] = 201;
       sol["resp"] = resp.rows;
     } catch (err) {
