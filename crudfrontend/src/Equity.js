@@ -4,20 +4,18 @@ import './Equity.css';
 
 function Equity({setEquity,equity}){
     var json={};
-    let val,f=1;
+    let val=0,f=1;
     return (
         <div className="equity">
-        <select id="equity-select" className="equity-select" name="Equity" onChange={(e)=>{
+            <label id="equity-select"> Equity: </label>
+        <input label="equity-select" className="equity-select" type={Text} onChange={(e)=>{
             json =equity;
             val=e.target.value;
             if(!(val in json))
             json[val]=0;
-        }} >
-          <option value="E1">E1</option>
-          <option value="E2">E2</option>
-          <option value="E3">E3</option>
-          <option value="E4">E4</option>
-        </select>
+            else
+            console.log(val," = ",json[val]);
+        }} />
         <select id="equity-select-action" className="equity-select-action" name="Equity" onChange={(e)=>{
             let action=(e.target.value).toString();
             if(action==="buy")
@@ -29,7 +27,7 @@ function Equity({setEquity,equity}){
           <option value="+">Sell</option>
         </select>
         <input type={Number} className="equity-select-input" onChange={(e)=>{
-            json[val]+=(f*e.target.value);
+            json[val]=parseInt(json[val])+(f*e.target.value);
         }}/>
         
         <button onClick={()=>{

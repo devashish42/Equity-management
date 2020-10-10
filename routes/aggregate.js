@@ -4,9 +4,9 @@ const orders = require("../models/orders");
 
 router.get("/", async (req, res) => {
   try {
-    console.log("--------------Orders Grouping --------------");
     const ord = await orders.getOrders();
     var json={};
+    console.log(" ----------Aggregated Order------------- ");
     for(let o of ord.resp)
     {
         for(let equity in o["order_details"])
@@ -18,19 +18,25 @@ router.get("/", async (req, res) => {
     }
     for(let o in json)
     {
-      if(json[o]>=0)
-      {
-        console.log("Buy ",json[o]," units of ",o);
-      }
-      else
-        console.log("Sell ",json[o]*-1," units of ",o);
+        if(json[o]>=0)
+        {
+            if(json[o]%10)
+            json[o]=10*( parseInt(json[o]/10) +1 );
+            console.log("Buy ",json[o]," units of ",o);
+        }
+        else
+        {
+            if(json[o]%10)
+            json[o]=10*(parseInt(json[o]/10));
+            console.log("Sell ",json[o]," units of ",o);
+        }
     }
-    var o={};
-    o["status"]=200;
-    o["body"]=json;
-    res.json(o);
+    var response={};
+    response["status"]=200;
+    response["body"]=json;
+    res.json(response);
   } catch (err) {
-    res.send("Error " + err);
+    res.send(" Error " + err);
   }
 });
 
