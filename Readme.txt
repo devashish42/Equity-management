@@ -121,12 +121,20 @@ I am using a postgres Database in Aws for storing the records of orders.
 ===============================Frontend using react=====================
 I am trying to develop the Frontend part for my practice but its not fully developed yet.
 
-Still you can go to crudfrontend folder and run
+
+Still you can go to crudfrontend folder and Do the following
+You can add a portfolio and add equity and commit them to save .
+After Adding you can click on Submit to send a post request and it will save the details in DB.
+You can click on Reset all previos orders to truncate the orders table and the place new ones.
+
+
+
+Run these commands in order after opening crudfrontend folder
+
 npm install 
 
 npm start 
 
 for starting the server and seeing the progress.
 
-Its not linked with backend yet.
 =========================================================================

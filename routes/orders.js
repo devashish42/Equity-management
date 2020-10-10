@@ -3,11 +3,13 @@ const router = express.Router();
 const orders = require("../models/orders");
 
 router.post("/", async (req, res) => {
-  console.log("working");
+  console.log("Posting ");
   console.log("post req ",req.body);
   try {
     const a1 = await orders.save(req.body);
+    console.log("Posted ");
     res.json(a1);
+
   } catch (err) {
     res.send("Error");
   }
