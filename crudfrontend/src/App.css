@@ -1,0 +1,22 @@
+.app{
+  width: 100vw;
+  height: 800px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: darkcyan;
+}
+.app>h1{
+  text-align: center;
+}
+.transactions{
+  padding: 20px;
+}
+.portfolio{
+margin-left: 10px;
+width: 100px;
+}
+.footer{
+  margin-left: 10px;
+
+}

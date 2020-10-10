@@ -1,0 +1,18 @@
+.equity{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.equity-select
+{
+    width: 50px;
+}
+.equity-select-input{
+    width: 50px;
+    margin-left: 20px;
+}
+.equity-select-action{
+    width: 50px;
+    margin-left: 20px;
+
+}
